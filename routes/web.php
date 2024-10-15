@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('home');
-});
+    })->name('home');
 
 Route::get('/signin', function () {
     return view('auth.signin');
@@ -74,3 +74,6 @@ Route::get('/home/{name}',function ($name){
 });
 
 
+Route::get('/about', function () {
+    return view('about');
+})->name('about');

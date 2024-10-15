@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ config('app.nama') }}</title>
-</head>
-<body>
-    <h1>Hello, {{$name ?? "team"}} </h1>
-</body>
-</html>
+@extends('layouts.main')
+
+@section('title','Home')
+    
+@section('content')
+@php
+    $_name=$name ?? "team";
+@endphp
+
+@if ($_name=="rosli")
+    <p>You are banned</p>
+@else 
+    <h1>Hello, {{$_name}} </h1>    
+    <button type="button" class="btn btn-primary">Click Me</button>  
+@endif
+@endsection
