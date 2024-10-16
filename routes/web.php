@@ -77,3 +77,8 @@ Route::get('/home/{name}',function ($name){
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+
+
+
+
+require __DIR__.'/feed/web.php';
