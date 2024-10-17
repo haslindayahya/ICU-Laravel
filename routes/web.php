@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -82,3 +83,13 @@ Route::get('/about', function () {
 
 
 require __DIR__.'/feed/web.php';
+
+Route::middleware('guest')->group(function() {
+    Route::get('/auth/signup',[AuthController::class,'signup'])->name('auth.signup');
+    Route::post('/auth/store',[AuthController::class,'storeUser'])->name('auth.store');
+    Route::post('/auth/login',[AuthController::class,'authenticate'])->name('auth.login');
+    Route::get('/auth/signin',[AuthController::class,'signin'])->name('auth.signin');
+});
+
+Route::get('/auth/logout',[AuthController::class,'signOut'])->name('auth.logout');
+
