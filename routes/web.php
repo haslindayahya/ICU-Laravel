@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\FeedAiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -92,4 +93,6 @@ Route::middleware('guest')->group(function() {
 });
 
 Route::get('/auth/logout',[AuthController::class,'signOut'])->name('auth.logout');
+
+Route::get('/ai/feed',[FeedAiController::class,'feedAi'])->name('ai.feed');
 

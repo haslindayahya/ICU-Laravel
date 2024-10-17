@@ -1,0 +1,14 @@
+POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAbL009fBRUxQBjVavbM7KUyj4cDAFWJkE HTTP/1.1
+content-type: application/json
+
+{
+    "contents":[
+        {
+            "parts":[
+                {
+                    "text":"Who is Singapore Prime Minister"
+                }
+            ]
+        }
+    ]
+  }
